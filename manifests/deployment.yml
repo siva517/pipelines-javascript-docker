@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sivapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sivapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: sivapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: sivapipelinesjavascriptdocker 
+          image: sivathumati.azurecr.io/sivapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
